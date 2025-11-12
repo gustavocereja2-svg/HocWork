@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoc Works</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/ícones/icone oficial rosa 1 - revisado.svg" type="image/png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#05001f">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="index.html"><img src="img/logo png/logotipo oficial preto - revisado.png" alt="Descrição da imagem" class="logo"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Principal</a></li>
+                <li><a href="empresa.html">Empresa</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <!-- hamburguer menu -->
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Construindo o amanhã do seu negócio, hoje.</h1>
+                <p>Democratizamos a inovação com ferramentas tecnológicas escaláveis para empresas de todos os portes.</p>
+                <a href="contato.html" class="cta-button">Solicite um Orçamento</a>
+            </div>
+        </section>
+
+        <section class="services">
+            <h2>Nossos Serviços</h2>
+            <div class="service-cards">
+                <div class="card">
+                    <h3>Desenvolvimento Web</h3>
+                    <p>Criação de sites e sistemas web robustos e escaláveis.</p>
+                </div>
+                <div class="card">
+                    <h3>Automação de Processos</h3>
+                    <p>Otimização de tarefas para aumentar a eficiência da sua equipe.</p>
+                </div>
+                <div class="card">
+                    <h3>Inteligência Artificial</h3>
+                    <p>Soluções de IA para análise de dados e tomada de decisões.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="diferenciais">
+            <h2>Nossos Diferenciais</h2>
+            <ul>
+                <li><strong>Parceria:</strong> Estamos juntos em cada etapa do projeto.</li>
+                <li><strong>Escalabilidade:</strong> Crescemos com você e seu negócio.</li>
+                <li><strong>Clareza:</strong> Tecnologia sem complicação e acessível.</li>
+                <li><strong>Inovação Acessível:</strong> Soluções que geram resultados imediatos.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Hoc Works. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        if('serviceWorker.register' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+            .then(() => console.log('Service Worker registrado com sucesso!'))
+            .catch(err => console.log('Erro no registro do service Worker:', err));
+        }
+    </script>
+</body>
+</html>

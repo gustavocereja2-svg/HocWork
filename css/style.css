@@ -1,0 +1,232 @@
+/* Adicione este bloco no início do seu CSS */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Importando fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@700&family=Lexend+Deca&display=swap');
+
+/* Variáveis de Cores (baseadas na identidade visual) */
+:root {
+    --azul-codigo-limpo: #0a5599;
+    --laranja-mvp: #f66e06;
+    --rosa-unicornio: #f01f5c;
+    --roxo-senior: #843f99;
+    --modo-escuro: #05001f;
+    --nuvem-privada: #ebeeff;
+    --rosa-beta: #f012d1; 
+}
+
+/* Estilos Gerais */
+body {
+    overflow-x: hidden;
+    font-family: 'Lexend Deca', sans-serif;
+    background-color: var(--modo-escuro);
+    color: var(--nuvem-privada);
+    margin: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Jura', sans-serif;
+    font-weight: 700;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--nuvem-privada);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+    width: 170px;   /* define a largura */
+    height: auto;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--modo-escuro);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--laranja-mvp);
+}
+
+.hero {
+    background: linear-gradient(45deg, var(--laranja-mvp), var(--rosa-unicornio), var(--rosa-beta), var(--roxo-senior), var(--azul-codigo-limpo));
+    color: var(--nuvem-privada);
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.cta-button {
+    background-color: var(--modo-escuro);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--azul-codigo-limpo);
+}
+
+.services, .diferenciais, .company-info, .contact-form, .map {
+    padding: 2rem;
+    text-align: left;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: var(--nuvem-privada);
+    color: var(--modo-escuro);
+    padding: 1.5rem;
+    border: 6px solid transparent; /* precisa ser não-zero */
+    border-image: linear-gradient(45deg, var(--laranja-mvp), var(--rosa-unicornio), var(--rosa-beta), var(--roxo-senior), var(--azul-codigo-limpo) ) 1;
+    border-radius: 14px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 300px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--azul-codigo-limpo);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: var(--nuvem-privada);
+    color: var(--modo-escuro);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Simplificar para um menu hamburguer em JS */
+    }
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Estilos para o ícone do menu hambúrguer */
+.hamburger {
+    display: none; /* Escondido por padrão em telas grandes */
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--modo-escuro);
+}
+
+/* Modificações na sua Media Query existente */
+/* Responsividade */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Mostra o ícone do hambúrguer */
+        z-index: 2; /* Garante que o ícone fique acima do menu quando aberto */
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .nav-links {
+        position: fixed;
+        right: -300%; /* Inicia fora da tela */
+        top: 0;
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--nuvem-privada);
+        width: 100%;
+        height: 100vh; /* Ocupa a altura toda da tela */
+        text-align: center;
+        transition: right 0.3s ease-in-out; /* Anima a propriedade 'right' */
+        z-index: 1; /* Garante que o menu fique acima do conteúdo da página */
+        
+        /* Centraliza os itens verticalmente */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links.active {
+        right: 0; /* Move o menu para dentro da tela */
+    }
+
+    .nav-links a {
+        font-size: 1.5rem; /* Aumenta o tamanho da fonte para melhor toque */
+    }
+
+    .nav-links li {
+        padding: 1.5rem 0; /* Aumenta o espaçamento entre os itens */
+    }
+    
+    .service-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
