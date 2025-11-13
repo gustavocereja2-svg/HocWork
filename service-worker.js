@@ -6,8 +6,8 @@ const ASSETS_TO_CACHE = [
     './contato.html',
     './css/style.css',
     './js/script.js',
-    './img/ícones/ícones_png/icone_192.png',
-    './img/ícones/ícones_png/icone_512.png'
+    './img/ícones/ícones png/icone 192.png',
+    './img/ícones/ícones png/icone 512.png'
 ];
 
 self.addEventListener("install", (event) => {
@@ -26,4 +26,5 @@ self.addEventListener("fetch", (event) => {
     );
 
 });
+
 
